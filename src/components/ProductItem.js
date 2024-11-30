@@ -27,10 +27,9 @@ const ProductItem = ({ product }) => {
       <button onClick={handleProductPick}>Pdt Pick</button>
       <button>Add Discount</button>
       {product.variants ? <Variants variants={product.variants} /> : null}
-      <ProductPicker
-        isOpen={isProductPickerOpen}
-        toggleIsOpen={setIsProductPickerOpen}
-      />
+      {isProductPickerOpen ? (
+        <ProductPicker toggleIsOpen={setIsProductPickerOpen} />
+      ) : null}
     </div>
   );
 };
